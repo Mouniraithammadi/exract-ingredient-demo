@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-
+from model import get_ingredient
 
 # Streamlit application
 st.title("Ingredient Extractor")
@@ -20,7 +20,7 @@ if uploaded_file is not None:
 
     # Get ingredients from the image
     ingredients = get_ingredient(image_path)
-
+    print(ingredients)
     # Display ingredients in table or labels on the left side
     st.subheader("Ingredients")
     for key, value in ingredients.items():
